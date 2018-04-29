@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        verticalLayout {
+        val layout = verticalLayout {
 
             button(R.string.start_activity) {
                 onClick {

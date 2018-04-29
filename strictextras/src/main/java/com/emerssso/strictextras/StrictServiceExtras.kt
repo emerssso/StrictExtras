@@ -11,17 +11,17 @@ import android.os.Parcelable
  * A marker interface that extends [Parcelable] and links the marked class with a particular
  * [Service] class, enabling the syntactic sugar of [startServiceWith].
  */
-interface ServiceExtras<A : Service> : Parcelable
+interface ServiceExtras<S : Service> : Parcelable
 
 /**
- * Allows an [Service] to be started with statically defined extras bundle in the form of
- * an [ServiceExtras] data class.
+ * Allows a [Service] to be started with statically defined extras bundle in the form of
+ * a [ServiceExtras] data class.
  *
  * Example usage to start a PizzaService:
  *     context.startServiceWith(PizzaService.Extras( size = Size.SMALL, toppings = listOf())
  */
-inline fun <reified A : Service, E : ServiceExtras<A>> Context.startServiceWith(extras: E) {
-    val intent = Intent(this, A::class.java)
+inline fun <reified S : Service, E : ServiceExtras<S>> Context.startServiceWith(extras: E) {
+    val intent = Intent(this, S::class.java)
     intent.putExtra(SERVICE_EXTRAS, extras)
     startService(intent)
 }
