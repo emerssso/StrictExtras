@@ -1,5 +1,6 @@
 # StrictExtras
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1fc8766a4e3444a5919af6b1901c2201)](https://app.codacy.com/app/emerssso/StrictExtras?utm_source=github.com&utm_medium=referral&utm_content=emerssso/StrictExtras&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/emerssso/StrictExtras.svg?branch=master)](https://travis-ci.org/emerssso/StrictExtras)
 
 This project demonstrates how to use Kotlin to enable strict/statically typed extras/arguments
