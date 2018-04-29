@@ -20,7 +20,7 @@ class StrictActivityExtrasTest {
     private val context : Application = RuntimeEnvironment.application
 
     @Test
-    internal fun testStartActivityWith() {
+    fun testStartActivityWith() {
         val extras = TestActivity.Extras("Test!")
         context.startActivityWith(extras)
 
@@ -58,7 +58,7 @@ class StrictActivityExtrasTest {
     }
 }
 
-class TestActivity : Activity(), StrictExtras<TestActivity, TestActivity.Extras> {
+class TestActivity : Activity(), StrictActivityExtras<TestActivity, TestActivity.Extras> {
 
     @SuppressLint("ParcelCreator")
     @Parcelize

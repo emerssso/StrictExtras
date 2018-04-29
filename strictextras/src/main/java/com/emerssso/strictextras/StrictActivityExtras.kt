@@ -18,7 +18,8 @@ interface ActivityExtras<A : Activity> : Parcelable
  * Allows [extras] to be used without a cast by making type information for extras available
  * at runtime.
  */
-interface StrictExtras<A, E> where E : ActivityExtras<A>, A : Activity, A : StrictExtras<A, E>
+interface StrictActivityExtras<A, E>
+        where E : ActivityExtras<A>, A : Activity, A : StrictActivityExtras<A, E>
 
 /**
  * Allows an [Activity] to be started with statically defined extras bundle in the form of
@@ -38,12 +39,12 @@ inline fun <reified A : Activity, E : ActivityExtras<A>> Context.startActivityWi
 /**
  * An accessor function for [ActivityExtras] included on an [Activity] using
  * [Context.startActivityWith].In order to avoid a cast on access, your [Activity] must implement the
- * marker interface [StrictExtras] to use this extension function.
+ * marker interface [StrictServiceExtras] to use this extension function.
  *
  * @throws IllegalArgumentException if [ActivityExtras] weren't set.
  */
 inline fun <reified A, E : ActivityExtras<A>>  A.extras() : E
-        where A : Activity, A : StrictExtras<A, E> {
+        where A : Activity, A : StrictActivityExtras<A, E> {
 
     //don't use activityExtras to avoid cast
     return intent.extras?.getParcelable(ACTIVITY_EXTRAS)

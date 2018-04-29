@@ -4,13 +4,13 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.emerssso.strictextras.ActivityExtras
-import com.emerssso.strictextras.StrictExtras
+import com.emerssso.strictextras.StrictActivityExtras
 import com.emerssso.strictextras.extras
 import kotlinx.android.parcel.Parcelize
 import org.jetbrains.anko.textView
 import org.jetbrains.anko.verticalLayout
 
-class PizzaActivity : AppCompatActivity(), StrictExtras<PizzaActivity, PizzaActivity.Extras> {
+class PizzaActivity : AppCompatActivity(), StrictActivityExtras<PizzaActivity, PizzaActivity.Extras> {
 
     @SuppressLint("ParcelCreator")
     @Parcelize
