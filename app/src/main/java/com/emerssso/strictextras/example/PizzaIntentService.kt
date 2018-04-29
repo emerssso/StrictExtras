@@ -26,7 +26,7 @@ class PizzaIntentService : IntentService(TAG) {
             ServiceExtras<PizzaIntentService>
 
     override fun onHandleIntent(intent: Intent?) {
-        val pizza = intent?.serviceExtras as Extras?
+        val pizza = intent?.serviceExtras as? Extras?
 
         pizza?.let {
             Log.d(TAG, "${pizza.size} pizza with ${pizza.toppings}")
