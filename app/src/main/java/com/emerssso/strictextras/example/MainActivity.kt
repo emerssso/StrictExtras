@@ -3,7 +3,7 @@ package com.emerssso.strictextras.example
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.emerssso.strictextras.R
-import com.example.strictextras.startActivityWith
+import com.emerssso.strictextras.startActivityWith
 import org.jetbrains.anko.button
 import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.verticalLayout

@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.example.strictextras
+package com.emerssso.strictextras
 
 import android.app.Activity
 import android.content.Context
@@ -33,14 +33,20 @@ inline fun <reified A : Activity, E : ActivityExtras<A>> Context.startActivityWi
     startActivity(intent)
 }
 
+
+
 /**
  * An accessor function for [ActivityExtras] included on an [Activity] using
  * [Context.startActivityWith].In order to avoid a cast on access, your [Activity] must implement the
  * marker interface [StrictExtras] to use this extension function.
+ *
+ * @throws IllegalArgumentException if [ActivityExtras] weren't set.
  */
 inline fun <reified A, E : ActivityExtras<A>>  A.extras() : E
         where A : Activity, A : StrictExtras<A, E> {
-    return intent.extras.getParcelable(ACTIVITY_EXTRAS)
+
+    //don't use activityExtras to avoid cast
+    return intent.extras?.getParcelable(ACTIVITY_EXTRAS)
             ?: throw IllegalArgumentException("Parameters not set for $this. " +
                     "Try using Context.startActivityWith().")
 }
@@ -49,11 +55,20 @@ inline fun <reified A, E : ActivityExtras<A>>  A.extras() : E
  * An accessor property for [ActivityExtras] included on an activity using
  * [Context.startActivityWith]. Because generics can't be used for property receivers,
  * you will have to cast accesses to the correct type using 'as', i.e. extras as MyExtras.
+ *
+ * @throws IllegalArgumentException if [ActivityExtras] weren't set.
  */
 val Activity.extras : Parcelable get() {
-    return this.intent.extras.getParcelable(ACTIVITY_EXTRAS)
+    return this.intent.activityExtras
             ?: throw IllegalArgumentException("Parameters not set for $this. " +
                     "Try using Context.startActivityWith().")
+}
+
+/**
+ * Returns the [ActivityExtras] in an Intent's extras bundle. Returns null if not found.
+ */
+val Intent.activityExtras : Parcelable? get() {
+    return this.extras?.getParcelable(ACTIVITY_EXTRAS)
 }
 
 /**

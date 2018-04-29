@@ -2,9 +2,9 @@ package com.emerssso.strictextras.example
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.example.strictextras.ActivityExtras
-import com.example.strictextras.StrictExtras
-import com.example.strictextras.extras
+import com.emerssso.strictextras.ActivityExtras
+import com.emerssso.strictextras.StrictExtras
+import com.emerssso.strictextras.extras
 import kotlinx.android.parcel.Parcelize
 import org.jetbrains.anko.textView
 import org.jetbrains.anko.verticalLayout
