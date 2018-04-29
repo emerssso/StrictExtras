@@ -18,3 +18,6 @@ simply create a data class that implements the `ActivityExtras` interface:
 Activities and Fragments may optionally implement `StrictActivityExtras` or 
 `StrictFragmentArguments` but this really only allows you to avoid a cast when calling `extras()`.
 
+Check the `app` module for example usages. The `strictextras` module contains a library with
+the APIs. Library availability via Maven forthcoming.
+
