@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         verticalLayout {
 
-            button(R.string.start_activty) {
+            button(R.string.start_activity) {
                 onClick {
                     startActivityWith(PizzaActivity.Extras(
                             size = Size.SMALL,

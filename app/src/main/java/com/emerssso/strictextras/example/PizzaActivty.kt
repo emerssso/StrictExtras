@@ -1,5 +1,6 @@
 package com.emerssso.strictextras.example
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.emerssso.strictextras.ActivityExtras
@@ -10,6 +11,8 @@ import org.jetbrains.anko.textView
 import org.jetbrains.anko.verticalLayout
 
 class PizzaActivity : AppCompatActivity(), StrictExtras<PizzaActivity, PizzaActivity.Extras> {
+
+    @SuppressLint("ParcelCreator")
     @Parcelize
     data class Extras(val toppings: List<Topping>, val size: Size) : ActivityExtras<PizzaActivity>
 

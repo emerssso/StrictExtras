@@ -1,6 +1,8 @@
 package com.emerssso.strictextras
 
+import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.Application
 import android.content.Intent
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertTrue
@@ -15,7 +17,7 @@ import org.robolectric.Shadows.shadowOf
 @RunWith(RobolectricTestRunner::class)
 class StrictActivityExtrasTest {
 
-    val context = RuntimeEnvironment.application
+    private val context : Application = RuntimeEnvironment.application
 
     @Test
     internal fun testStartActivityWith() {
@@ -57,6 +59,8 @@ class StrictActivityExtrasTest {
 }
 
 class TestActivity : Activity(), StrictExtras<TestActivity, TestActivity.Extras> {
+
+    @SuppressLint("ParcelCreator")
     @Parcelize
     data class Extras(val str : String) : ActivityExtras<TestActivity>
 }
