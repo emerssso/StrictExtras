@@ -10,8 +10,15 @@ import kotlinx.android.parcel.Parcelize
 import org.jetbrains.anko.textView
 import org.jetbrains.anko.verticalLayout
 
-class PizzaActivity : AppCompatActivity(), StrictActivityExtras<PizzaActivity, PizzaActivity.Extras> {
+/**
+ * Demonstrates how to set up an activity to use StrictExtras
+ */
+class PizzaActivity : AppCompatActivity(),
+        StrictActivityExtras<PizzaActivity, PizzaActivity.Extras> {
 
+    /**
+     * Extras used to start [PizzaActivity]
+     */
     @SuppressLint("ParcelCreator")
     @Parcelize
     data class Extras(val toppings: List<Topping>, val size: Size) : ActivityExtras<PizzaActivity>
@@ -27,5 +34,8 @@ class PizzaActivity : AppCompatActivity(), StrictActivityExtras<PizzaActivity, P
     }
 }
 
+/** enum defining pizza toppings used in examples */
 enum class Topping { PEPPERONI, HAM, ONION, OLIVE }
+
+/** enum defining pizza sizes used in examples */
 enum class Size { SMALL, MEDIUM, LARGE, EXTRA_LARGE }

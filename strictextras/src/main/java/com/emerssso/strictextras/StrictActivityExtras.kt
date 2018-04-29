@@ -39,7 +39,7 @@ inline fun <reified A : Activity, E : ActivityExtras<A>> Context.startActivityWi
 /**
  * An accessor function for [ActivityExtras] included on an [Activity] using
  * [Context.startActivityWith].In order to avoid a cast on access, your [Activity] must implement the
- * marker interface [StrictServiceExtras] to use this extension function.
+ * marker interface [StrictActivityExtras] to use this extension function.
  *
  * @throws IllegalArgumentException if [ActivityExtras] weren't set.
  */

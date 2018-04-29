@@ -1,5 +1,6 @@
 package com.emerssso.strictextras.example
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.emerssso.strictextras.startActivityWith
@@ -8,10 +9,15 @@ import org.jetbrains.anko.button
 import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.verticalLayout
 
+/**
+ * Entry class that demonstrates how to use StrictExtras APIs to start other components
+ */
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        Intent(this, PizzaActivity::class.java)
 
         verticalLayout {
 

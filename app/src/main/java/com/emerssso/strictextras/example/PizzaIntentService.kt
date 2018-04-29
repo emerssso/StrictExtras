@@ -17,6 +17,9 @@ private const val TAG = "PizzaIntentService"
  */
 class PizzaIntentService : IntentService(TAG) {
 
+    /**
+     * extras to use with StrictExtras APIs to start [PizzaIntentService]
+     */
     @SuppressLint("ParcelCreator")
     @Parcelize
     data class Extras(val size: Size, val toppings: List<Topping>) :
