@@ -21,7 +21,3 @@ cache:
     - $HOME/.android/build-cache
 
 script: ./gradlew clean testDebugUnitTest lintDebug
-
-language: java
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
