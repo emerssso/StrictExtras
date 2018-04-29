@@ -1,5 +1,6 @@
 package com.emerssso.strictextras
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.app.IntentService
 import android.app.Service
@@ -29,6 +30,8 @@ class StrictServiceExtrasTest {
 }
 
 class TestService : IntentService("Test") {
+
+    @SuppressLint("ParcelCreator")
     @Parcelize
     data class Extras(val str: String) : ServiceExtras<TestService>
 

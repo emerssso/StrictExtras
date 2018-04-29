@@ -1,5 +1,6 @@
 package com.emerssso.strictextras.example
 
+import android.annotation.SuppressLint
 import android.app.IntentService
 import android.content.Intent
 import android.util.Log
@@ -16,6 +17,7 @@ private const val TAG = "PizzaIntentService"
  */
 class PizzaIntentService : IntentService(TAG) {
 
+    @SuppressLint("ParcelCreator")
     @Parcelize
     data class Extras(val size: Size, val toppings: List<Topping>) :
             ServiceExtras<PizzaIntentService>

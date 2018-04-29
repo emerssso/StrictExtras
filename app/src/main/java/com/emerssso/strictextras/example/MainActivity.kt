@@ -2,7 +2,6 @@ package com.emerssso.strictextras.example
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.emerssso.strictextras.R
 import com.emerssso.strictextras.startActivityWith
 import com.emerssso.strictextras.startServiceWith
 import org.jetbrains.anko.button
